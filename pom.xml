@@ -9,10 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>jerry-common</module>
-        <module>jerry-generator</module>
         <module>jerry-admin</module>
         <module>jerry-config</module>
-        <module>ace-center</module>
     </modules>
     <packaging>pom</packaging>
 
