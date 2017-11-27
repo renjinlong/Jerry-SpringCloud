@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ace-center" />
+        <module name="jerry-admin" />
+        <module name="jerry-common" />
+        <module name="jerry-config" />
+        <module name="Jerry-Generator" />
+        <module name="jerry-generator" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.7">
+      <module name="ace-center" target="1.7" />
+      <module name="jerry-admin" target="1.7" />
+      <module name="jerry-common" target="1.8" />
+      <module name="jerry-config" target="1.7" />
+      <module name="Jerry-Generator" target="1.7" />
+      <module name="jerry-generator" target="1.7" />
+      <module name="Spring-Cloud-JERRY-Admin" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
