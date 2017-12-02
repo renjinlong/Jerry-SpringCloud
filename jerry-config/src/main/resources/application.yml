@@ -1,8 +1,12 @@
 spring:
       application:
-             name:jerry-config
-      profiles:
-             active:native
+             name: jerry-config
+      cloud:
+              config:
+                  server:
+                      git:
+                          uri: https://github.com/renjinlong/Jerry-Config.git
+
 
 server:
   port: 8750 #启动端口

@@ -1,0 +1,69 @@
+spring:
+    application:
+        name: admin-gate
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
+        default-property-inclusion: non_null
+
+server:
+    port: 8765 #启动端口
+#
+zuul:
+#/api/uc/user/test --> user-center   /user/test
+#/api/uc/user/test --> user-center   /uc/user/test
+#/api/admin/user/test   /admin/user/test stripPrefix:false
+  prefix: /api #为zuul设置一个公共的前缀
+  routes:
+    uc:
+      path: /uc/**
+      serviceId: user-center
+#      stripPrefix: false  # 不移除前缀 uc
+
+
+ribbon:
+  eureka:
+    enabled: true
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: false
+
+hystrix:
+  threadpool:
+    default:
+      coreSize: 1000 ##并发执行的最大线程数，默认10
+      maxQueueSize: 1000 ##BlockingQueue的最大队列数
+      queueSizeRejectionThreshold: 500 ##即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 50000
+
+eureka:
+    instance:
+        statusPageUrlPath: /info
+        healthCheckUrlPath: /health
+        lease-renewal-interval-in-seconds: 30
+        lease-expiration-duration-in-seconds: 90
+        # 多网卡制定IP，docker部署推荐
+#        prefer-ip-address: true
+#        ip-address: 127.0.0.1
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8761/eureka/,http://localhost:8661/eureka/
+                    # docker 部署开启
+#            defaultZone: http://center:8761/eureka/
+
+
+jwt:
+  token-header: access-token
+  ignore-url: /auth/jwt
+  pri-key:
+      path: /Users/renjinlong/Documents/workspace_upgrade/Jerry-SpringCloud/jerry-gate/src/main/resources/pri.key
+  pub-key:
+    path: /Users/ace/git/ag-parent/ag-zuul/src/main/resources/jwt/pub.key
+

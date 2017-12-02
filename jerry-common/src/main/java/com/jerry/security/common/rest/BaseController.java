@@ -1,5 +1,6 @@
 package com.jerry.security.common.rest;
 
+
 import com.jerry.security.common.biz.BaseBiz;
 import com.jerry.security.common.msg.ObjectRestResponse;
 import com.jerry.security.common.msg.TableResultResponse;
@@ -28,7 +29,7 @@ public class BaseController<Biz extends BaseBiz,Entity> {
     @ResponseBody
     public ObjectRestResponse<Entity> add(@RequestBody Entity entity){
         baseBiz.insertSelective(entity);
-        return new ObjectRestResponse<Entity>().rel(true);
+        return new ObjectRestResponse<Entity>();
     }
 
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
@@ -41,13 +42,13 @@ public class BaseController<Biz extends BaseBiz,Entity> {
     @ResponseBody
     public ObjectRestResponse<Entity> update(@RequestBody Entity entity){
         baseBiz.updateSelectiveById(entity);
-        return new ObjectRestResponse<Entity>().rel(true);
+        return new ObjectRestResponse<Entity>();
     }
     @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
     @ResponseBody
     public ObjectRestResponse<Entity> remove(@PathVariable int id){
         baseBiz.deleteById(id);
-        return new ObjectRestResponse<Entity>().rel(true);
+        return new ObjectRestResponse<Entity>();
     }
 
     @RequestMapping(value = "/all",method = RequestMethod.GET)

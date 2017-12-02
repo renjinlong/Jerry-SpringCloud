@@ -1,6 +1,6 @@
 package com.jerry.security.common.util.jwt;
 
-import com.jerry.security.common.constant.CommonConstants;
+import com.jerry.security.common.constants.CommonConstants;
 import com.jerry.security.common.util.RsaKeyHelper;
 import com.jerry.security.common.util.StringHelper;
 import io.jsonwebtoken.Claims;
@@ -14,6 +14,7 @@ import org.joda.time.DateTime;
  */
 public class JWTHelper {
     private static RsaKeyHelper rsaKeyHelper = new RsaKeyHelper();
+
     /**
      * 密钥加密token
      *
@@ -59,5 +60,8 @@ public class JWTHelper {
         Claims body = claimsJws.getBody();
         return new JWTInfo(body.getSubject(), StringHelper.getObjectValue(body.get(CommonConstants.JWT_KEY_USER_ID)), StringHelper.getObjectValue(body.get(CommonConstants.JWT_KEY_NAME)));
     }
+
+
+
 
 }

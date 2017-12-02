@@ -1,6 +1,6 @@
 package com.jerry.security.common.context;
 
-import com.jerry.security.common.constant.CommonConstants;
+import com.jerry.security.common.constants.CommonConstants;
 import com.jerry.security.common.util.StringHelper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +14,11 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by ace on 2017/9/8.
+ * @author renjinlong
+ * @Title:
+ * @Package com.jerry.security.common.context
+ * @Description: TODO
+ * @date 2017/11/30 下午1:53
  */
 public class BaseContextHandler {
     public static ThreadLocal<Map<String, Object>> threadLocal = new ThreadLocal<Map<String, Object>>();

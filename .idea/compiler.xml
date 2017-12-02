@@ -6,22 +6,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ace-center" />
         <module name="jerry-admin" />
+        <module name="jerry-auth" />
+        <module name="jerry-auth-client" />
+        <module name="jerry-center" />
         <module name="jerry-common" />
         <module name="jerry-config" />
-        <module name="Jerry-Generator" />
-        <module name="jerry-generator" />
+        <module name="jerry-gate" />
+        <module name="jerry-uc" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.7">
-      <module name="ace-center" target="1.7" />
-      <module name="jerry-admin" target="1.7" />
+      <module name="jerry-admin" target="1.8" />
+      <module name="jerry-auth" target="1.8" />
+      <module name="jerry-auth-client" target="1.8" />
+      <module name="jerry-center" target="1.8" />
       <module name="jerry-common" target="1.8" />
-      <module name="jerry-config" target="1.7" />
-      <module name="Jerry-Generator" target="1.7" />
-      <module name="jerry-generator" target="1.7" />
-      <module name="Spring-Cloud-JERRY-Admin" target="1.7" />
+      <module name="jerry-config" target="1.8" />
+      <module name="jerry-gate" target="1.8" />
+      <module name="Jerry-SpringCloud" target="1.8" />
+      <module name="jerry-uc" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

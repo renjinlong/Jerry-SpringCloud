@@ -43,7 +43,7 @@ public class TreeUtil{
    * @param treeNodes
    * @return
    */
-  public static <T extends TreeNode> List<T> buildByRecursive(List<T> treeNodes,Object root) {
+  public static <T extends TreeNode> List<T> buildByRecursive(List<T> treeNodes, Object root) {
     List<T> trees = new ArrayList<T>();
     for (T treeNode : treeNodes) {
       if (root.equals(treeNode.getParentId())) {

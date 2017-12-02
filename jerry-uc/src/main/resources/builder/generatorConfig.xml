@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- classPathEntry:数据库的JDBC驱动,换成你自己的驱动位置 -->
+	<classPathEntry location="/Users/renjinlong/IdeaProjects/Myibatis-generate/WebRoot/WEB-INF/lib/mysql-connector-java-5.1.30.jar" />
+
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+
+		<!-- 去除自动生成的注释 -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/meijie" userId="root" password="123456">
+		</jdbcConnection> -->
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://116.196.98.85:3306/mydb" userId="jerrymysql" password="mysqlJerry!1">
+		</jdbcConnection>
+
+		<javaTypeResolver >
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:自动生成代码的位置 -->
+		<javaModelGenerator targetPackage="entity" targetProject="/Users/renjinlong/Documents/workspace_upgrade/Jerry-SpringCloud/jerry-uc/src/main/java/com/jerry/security/uc">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="mapping"  targetProject="/Users/renjinlong/Documents/workspace_upgrade/Jerry-SpringCloud/jerry-uc/src/main/java/com/jerry/security/uc">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<javaClientGenerator type="XMLMAPPER" targetPackage="dao"  targetProject="/Users/renjinlong/Documents/workspace_upgrade/Jerry-SpringCloud/jerry-uc/src/main/java/com/jerry/security/uc">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- tableName:用于自动生成代码的数据库表；domainObjectName:对应于数据库表的javaBean类名 -->
+		<!-- <table tableName="t_order" domainObjectName="Order" >
+			 <generatedKey column="cid" sqlStatement="Mysql" identity="true" type="post"/>
+		</table> -->
+		<!-- <table tableName="tproduct" domainObjectName="Product"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"    ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="ttrusttrade" domainObjectName="Trusttrade"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"    ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="tphone_msg" domainObjectName="Phone_msg"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"    ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="torder_child" domainObjectName="OrderChild" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="torder" domainObjectName="Order"   enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="tloan_account" domainObjectName="LoanAccount"   enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="tloan" domainObjectName="Loan" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="tinvestor_installment_detail" domainObjectName="InvestorInstallmentDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="tinvestor_installment" domainObjectName="InvestorInstallment"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"    ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="tinterest" domainObjectName="Interest" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="tinstallment_detail" domainObjectName="InstallmentDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="tinstallmentfee" domainObjectName="Installmentfee" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="tinstallment" domainObjectName="Installment"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="tdetail" domainObjectName="Detail"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="tcustomer" domainObjectName="Customer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="tbankinfo" domainObjectName="Bankinfo"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="tadvanced_repay_fee" domainObjectName="AdvancedRepayFee"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="tadvanced_repay" domainObjectName="AdvancedRepay"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="taccount_detail" domainObjectName="AccountDetail"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="taccount" domainObjectName="Account"   enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		 <table tableName="tbanner" domainObjectName="Banner" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		  		 <table tableName="tnotice" domainObjectName="Notice" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		  		 <table tableName="tpagevalue" domainObjectName="Pagevalue" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		 <table tableName="tloan" domainObjectName="Loan" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		<table tableName="tarchives" domainObjectName="ArchiveVo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  ><generatedKey column="cid" sqlStatement="Mysql"/></table>
+		  -->
+		<!-- <table tableName="tb_app_version" domainObjectName="TbAppVersion"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+		<table tableName="tb_apply_operators" domainObjectName="TbApplyOperators"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+		<table tableName="tb_apply_image" domainObjectName="TbApplyImage"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+		<table tableName="tb_apply_taobao" domainObjectName="TbApplyTaobao"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+		<table tableName="tb_dict_school" domainObjectName="TbDictSchool"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+		<table tableName="tb_risk_contact" domainObjectName="TbRiskContact"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+		<table tableName="tb_apply_contact" domainObjectName="TbApplyContact"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table> -->
+
+<!-- <table tableName="tb_apply_audit" domainObjectName="TbApplyAudit"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table> -->
+<!-- 		<table tableName="tb_apply_personal" domainObjectName="TbApplyPersonal"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+ -->
+		<!-- <table tableName="tb_apply_work" domainObjectName="TbApplyWork"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table> -->
+		<!-- <table tableName="tb_apply_student" domainObjectName="TbApplyStudent"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>-->
+		<!-- <table tableName="tb_dict" domainObjectName="TbDict"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+		<table tableName="tb_dictionary" domainObjectName="TbDictionary"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+		<table tableName="tb_order" domainObjectName="TbOrder"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+		<table tableName="tb_sms" domainObjectName="TbSms"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+		<table tableName="tb_sms_template" domainObjectName="TbSmsTemplate"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+		<table tableName="tbDiscountUser" domainObjectName="TbDiscountUser"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table> -->
+	<!-- <table tableName="tb_discount_user" domainObjectName="TbDiscountUser"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+	<table tableName="tb_discount" domainObjectName="TbDiscount"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+	<table tableName="tb_risk_app" domainObjectName="TbRiskApp"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+	 -->
+	<!-- <table tableName="tb_apply_loan" domainObjectName="TbApplyLoan"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+	<table tableName="tb_user_auth" domainObjectName="TbUserAuth"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table> -->
+	<!-- <table tableName="tb_risk_wecash" domainObjectName="TbRiskWecash"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table> -->
+
+	<!-- <table tableName="tb_redo_uploadfile" domainObjectName="TbRedoUploadfile"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table> -->
+	<!-- <table tableName="tb_apply_bank" domainObjectName="TbApplyBank"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table> -->
+<!-- 	<table tableName="tb_sms" domainObjectName="TbSms"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+ -->
+<!-- <table tableName="tb_apply_personal" domainObjectName="TbApplyPersonal"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+ <table tableName="tb_risk_telephone" domainObjectName="TbRiskTelephone"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+ -->
+  <!-- <table tableName="tb_oper_invitation" domainObjectName="TbOperInvitation"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table> -->
+<!--  <table tableName="ccs_order" domainObjectName="CcsOrder"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="order_id" sqlStatement="Mysql"/></table>
+ <table tableName="tb_ready_appno" domainObjectName="TbReadyAppno"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+ -->
+<!-- <table tableName="tb_redo_order" domainObjectName="TbRedoOrder"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+<table tableName="tb_apply_loan" domainObjectName="TbApplyLoan"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+  -->
+  <!-- <table tableName="tb_mj_wecash" domainObjectName="TbMjWecash"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table> -->
+  <table tableName="t_user" domainObjectName="TUser"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table>
+  <!-- <table tableName="tb_user_level" domainObjectName="TbUserLevel"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"   ><generatedKey column="id" sqlStatement="Mysql"/></table> -->
+ </context>
+
+</generatorConfiguration>

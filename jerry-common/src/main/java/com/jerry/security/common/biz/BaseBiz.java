@@ -2,9 +2,8 @@ package com.jerry.security.common.biz;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-
+import com.jerry.security.common.exception.BaseException;
 import com.jerry.security.common.msg.TableResultResponse;
-import com.jerry.security.common.util.EntityUtils;
 import com.jerry.security.common.util.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.common.Mapper;
@@ -33,7 +32,7 @@ public abstract class BaseBiz<M extends Mapper<T>, T> {
     }
 
 
-    public T selectById(Object id) {
+    public T selectById(Object id) throws BaseException {
         return mapper.selectByPrimaryKey(id);
     }
 
@@ -54,13 +53,11 @@ public abstract class BaseBiz<M extends Mapper<T>, T> {
 
 
     public void insert(T entity) {
-        EntityUtils.setCreatAndUpdatInfo(entity);
         mapper.insert(entity);
     }
 
 
     public void insertSelective(T entity) {
-        EntityUtils.setCreatAndUpdatInfo(entity);
         mapper.insertSelective(entity);
     }
 
@@ -76,13 +73,11 @@ public abstract class BaseBiz<M extends Mapper<T>, T> {
 
 
     public void updateById(T entity) {
-        EntityUtils.setUpdatedInfo(entity);
         mapper.updateByPrimaryKey(entity);
     }
 
 
     public void updateSelectiveById(T entity) {
-        EntityUtils.setUpdatedInfo(entity);
         mapper.updateByPrimaryKeySelective(entity);
 
     }

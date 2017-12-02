@@ -1,29 +1,26 @@
 package com.jerry.security.common.exception;
 
 /**
- * Created by ace on 2017/9/8.
+ * @author renjinlong
+ * @Title:
+ * @Package com.jerry.security.common
+ * @Description: TODO
+ * @date 2017/11/30 上午10:06
  */
 public class BaseException extends RuntimeException {
+
     private int status = 200;
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
 
     public BaseException() {
     }
 
-    public BaseException(String message,int status) {
-        super(message);
-        this.status = status;
-    }
-
     public BaseException(String message) {
         super(message);
+    }
+
+    public BaseException(String message, int status) {
+        super(message);
+        this.status = status;
     }
 
     public BaseException(String message, Throwable cause) {
@@ -36,5 +33,13 @@ public class BaseException extends RuntimeException {
 
     public BaseException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 }

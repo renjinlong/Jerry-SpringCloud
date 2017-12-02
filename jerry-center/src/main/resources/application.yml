@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: jerry-center
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false  #false 不作为客服端注册到注册中心
+    fetch-registry: false
+  server:
+    enable-self-preservation: false  # 设为false，关闭自我保护(开启自我保护服务停止为down状态)
+    eviction-interval-timer-in-ms: 60000
+
+

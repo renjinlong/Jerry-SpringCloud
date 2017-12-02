@@ -14,6 +14,7 @@ import java.security.spec.X509EncodedKeySpec;
 public class RsaKeyHelper {
     /**
      * 获取公钥
+     *
      * @param filename
      * @return
      * @throws Exception
@@ -31,6 +32,7 @@ public class RsaKeyHelper {
 
     /**
      * 获取密钥
+     *
      * @param filename
      * @return
      * @throws Exception
@@ -48,13 +50,14 @@ public class RsaKeyHelper {
 
     /**
      * 生存rsa公钥和密钥
+     *
      * @param publicKeyFilename
      * @param privateKeyFilename
      * @param password
      * @throws IOException
      * @throws NoSuchAlgorithmException
      */
-    public void generateKey(String publicKeyFilename,String privateKeyFilename,String password) throws IOException, NoSuchAlgorithmException {
+    public void generateKey(String publicKeyFilename, String privateKeyFilename, String password) throws IOException, NoSuchAlgorithmException {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
         SecureRandom secureRandom = new SecureRandom(password.getBytes());
         keyPairGenerator.initialize(1024, secureRandom);
@@ -67,6 +70,12 @@ public class RsaKeyHelper {
         fos = new FileOutputStream(privateKeyFilename);
         fos.write(privateKeyBytes);
         fos.close();
+    }
+
+    public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
+        RsaKeyHelper rsaKeyHelper = new RsaKeyHelper();
+        String path="/Users/renjinlong/Documents/workspace_upgrade/Jerry-SpringCloud/jerry-auth/jerry-auth-client/src/main/resources/client/";
+        rsaKeyHelper.generateKey(path+"pub.key", path+"pri.key", "1*&623!f");
     }
 
 }
