@@ -13,9 +13,10 @@
         <module>jerry-config</module>
         <module>jerry-center</module>
         <module>jerry-gate</module>
-        <module>jerry-uc</module>
         <module>jerry-common</module>
+        <module>jerry-uc</module>
         <module>jerry-auth</module>
+        <module>jerry-generator</module>
     </modules>
     <packaging>pom</packaging>
 

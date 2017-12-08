@@ -11,16 +11,24 @@ public class BaseException extends RuntimeException {
 
     private int status = 200;
 
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
     public BaseException() {
+    }
+
+    public BaseException(String message,int status) {
+        super(message);
+        this.status = status;
     }
 
     public BaseException(String message) {
         super(message);
-    }
-
-    public BaseException(String message, int status) {
-        super(message);
-        this.status = status;
     }
 
     public BaseException(String message, Throwable cause) {
@@ -33,13 +41,5 @@ public class BaseException extends RuntimeException {
 
     public BaseException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
     }
 }

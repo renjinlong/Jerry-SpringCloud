@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * @Description: TODO
  * @date 2017/11/30 上午10:35
  */
-@ControllerAdvice("com.jerry.security")
+@ControllerAdvice("com.jerry")
 @ResponseBody
 public class GlobalExceptionHandler {
     private Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
@@ -30,10 +30,9 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public BaseResponse otherExceptionHandler(HttpServletResponse response, BaseException ex) {
+    public BaseResponse otherExceptionHandler(HttpServletResponse response, Exception ex) {
         logger.error(ex.getMessage(),ex);
         return new BaseResponse(CommonConstants.EX_OTHER_CODE, ex.getMessage());
     }
-
 
 }

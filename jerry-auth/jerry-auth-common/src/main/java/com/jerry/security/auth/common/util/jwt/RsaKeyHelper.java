@@ -1,4 +1,4 @@
-package com.jerry.security.common.util;
+package com.jerry.security.auth.common.util.jwt;
 
 import java.io.DataInputStream;
 import java.io.FileOutputStream;

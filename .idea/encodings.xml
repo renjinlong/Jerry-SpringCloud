@@ -4,11 +4,15 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jerry-admin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jerry-auth" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jerry-auth-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jerry-auth/jerry-auth-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jerry-auth/jerry-auth-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jerry-auth/jerry-auth-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jerry-center" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jerry-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jerry-config" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jerry-gate" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jerry-generator" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jerry-uc" charset="UTF-8" />
   </component>
 </project>

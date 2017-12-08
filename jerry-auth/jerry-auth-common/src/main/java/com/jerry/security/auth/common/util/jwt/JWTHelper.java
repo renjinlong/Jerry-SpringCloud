@@ -1,8 +1,8 @@
-package com.jerry.security.common.util.jwt;
+package com.jerry.security.auth.common.util.jwt;
 
-import com.jerry.security.common.constants.CommonConstants;
-import com.jerry.security.common.util.RsaKeyHelper;
-import com.jerry.security.common.util.StringHelper;
+import com.jerry.security.auth.common.constatns.CommonConstants;
+
+import com.jerry.security.auth.common.util.StringHelper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
@@ -60,8 +60,5 @@ public class JWTHelper {
         Claims body = claimsJws.getBody();
         return new JWTInfo(body.getSubject(), StringHelper.getObjectValue(body.get(CommonConstants.JWT_KEY_USER_ID)), StringHelper.getObjectValue(body.get(CommonConstants.JWT_KEY_NAME)));
     }
-
-
-
 
 }

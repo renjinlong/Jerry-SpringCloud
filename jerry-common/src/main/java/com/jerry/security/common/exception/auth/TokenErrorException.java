@@ -1,5 +1,6 @@
 package com.jerry.security.common.exception.auth;
 
+import com.jerry.security.common.constants.CommonConstants;
 import com.jerry.security.common.exception.BaseException;
 
 /**
@@ -10,9 +11,7 @@ import com.jerry.security.common.exception.BaseException;
  * @date 2017/11/30 上午10:19
  */
 public class TokenErrorException extends BaseException {
-    private static final Integer TOKEN_ERROR_CODE = 40101;
-
     public TokenErrorException(String message, int status) {
-        super(message, TOKEN_ERROR_CODE);
+        super(message, CommonConstants.EX_TOKEN_ERROR_CODE);
     }
 }

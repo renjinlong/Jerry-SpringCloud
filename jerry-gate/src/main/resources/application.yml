@@ -15,11 +15,13 @@ zuul:
 #/api/admin/user/test   /admin/user/test stripPrefix:false
   prefix: /api #为zuul设置一个公共的前缀
   routes:
-    uc:
+    user-center:
       path: /uc/**
       serviceId: user-center
 #      stripPrefix: false  # 不移除前缀 uc
-
+    jerry-auth-service:
+      path: /auth/**
+      serviceId: jerry-auth-service
 
 ribbon:
   eureka:
@@ -57,13 +59,4 @@ eureka:
             defaultZone: http://localhost:8761/eureka/,http://localhost:8661/eureka/
                     # docker 部署开启
 #            defaultZone: http://center:8761/eureka/
-
-
-jwt:
-  token-header: access-token
-  ignore-url: /auth/jwt
-  pri-key:
-      path: /Users/renjinlong/Documents/workspace_upgrade/Jerry-SpringCloud/jerry-gate/src/main/resources/pri.key
-  pub-key:
-    path: /Users/ace/git/ag-parent/ag-zuul/src/main/resources/jwt/pub.key
 

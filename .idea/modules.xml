@@ -3,14 +3,17 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Jerry-SpringCloud.iml" filepath="$PROJECT_DIR$/Jerry-SpringCloud.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jerry-auth/ace-auth-client.iml" filepath="$PROJECT_DIR$/jerry-auth/ace-auth-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/admin.iml" filepath="$PROJECT_DIR$/admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/jerry-admin/jerry-admin.iml" filepath="$PROJECT_DIR$/jerry-admin/jerry-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/jerry-auth/jerry-auth.iml" filepath="$PROJECT_DIR$/jerry-auth/jerry-auth.iml" />
       <module fileurl="file://$PROJECT_DIR$/jerry-auth/jerry-auth-client/jerry-auth-client.iml" filepath="$PROJECT_DIR$/jerry-auth/jerry-auth-client/jerry-auth-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jerry-auth/jerry-auth-common/jerry-auth-common.iml" filepath="$PROJECT_DIR$/jerry-auth/jerry-auth-common/jerry-auth-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jerry-auth/jerry-auth-service/jerry-auth-service.iml" filepath="$PROJECT_DIR$/jerry-auth/jerry-auth-service/jerry-auth-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/jerry-center/jerry-center.iml" filepath="$PROJECT_DIR$/jerry-center/jerry-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/jerry-common/jerry-common.iml" filepath="$PROJECT_DIR$/jerry-common/jerry-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/jerry-config/jerry-config.iml" filepath="$PROJECT_DIR$/jerry-config/jerry-config.iml" />
       <module fileurl="file://$PROJECT_DIR$/jerry-gate/jerry-gate.iml" filepath="$PROJECT_DIR$/jerry-gate/jerry-gate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jerry-generator/jerry-generator.iml" filepath="$PROJECT_DIR$/jerry-generator/jerry-generator.iml" />
       <module fileurl="file://$PROJECT_DIR$/jerry-uc/jerry-uc.iml" filepath="$PROJECT_DIR$/jerry-uc/jerry-uc.iml" />
     </modules>
   </component>

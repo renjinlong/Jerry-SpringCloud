@@ -37,13 +37,13 @@ public class PostFilter extends ZuulFilter {
 
     @Override
     public Object run() {
-        log.info("post....");
-        RequestContext ctx = RequestContext.getCurrentContext();
-        long total = System.currentTimeMillis() - (long) ctx.get("start");
-        // ctrl alt l 格式化快捷建
-        // rsponse
-//        ctx.addZuulResponseHeader();
-        log.info("the request use :" + total + "ms");
+//        log.info("post....");
+//        RequestContext ctx = RequestContext.getCurrentContext();
+//        long total = System.currentTimeMillis() - (long) ctx.get("start");
+//        // ctrl alt l 格式化快捷建
+//        // rsponse
+////        ctx.addZuulResponseHeader();
+//        log.info("the request use :" + total + "ms");
 //        try {
 //            int i = 1 / 0;
 //        } catch (exception e) {

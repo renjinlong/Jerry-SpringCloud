@@ -1,4 +1,4 @@
-package com.jerry.security.common.util.jwt;
+package com.jerry.security.auth.common.util.jwt;
 
 import java.io.Serializable;
 

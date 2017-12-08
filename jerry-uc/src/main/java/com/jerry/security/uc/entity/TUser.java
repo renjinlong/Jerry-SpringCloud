@@ -60,4 +60,5 @@ public class TUser {
     public void setAddress(String address) {
         this.address = address == null ? null : address.trim();
     }
+
 }
