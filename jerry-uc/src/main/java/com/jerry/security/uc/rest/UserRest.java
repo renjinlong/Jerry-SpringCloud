@@ -20,8 +20,6 @@ public class UserRest extends BaseController<TUserBiz, TUser> {
     @Value("${jwt.pri-key.path}")
     private String priKeyPath;
 
-    String  test;
-
     @RequestMapping("test")
     @ResponseBody
     public String test() {

@@ -1,7 +1,8 @@
 package com.jerry.security.auth.controller;
 
+import com.jerry.security.auth.bean.UserInfo;
 import com.jerry.security.auth.biz.UserBiz;
-import com.jerry.security.auth.entity.UserInfo;
+import com.jerry.security.auth.entity.User;
 import com.jerry.security.auth.util.user.JwtTokenUtil;
 import com.jerry.security.common.exception.UserInvalidException;
 import com.jerry.security.common.msg.ObjectRestResponse;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("jwt")
-public class AuthController extends BaseController<UserBiz, UserInfo> {
+public class AuthController extends BaseController<UserBiz, User> {
 
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
@@ -25,16 +26,17 @@ public class AuthController extends BaseController<UserBiz, UserInfo> {
     @RequestMapping(path = "token", method = RequestMethod.POST)
     @ResponseBody
     public ObjectRestResponse userLogin(String username, String password) {
-        UserInfo sendUser = new UserInfo();
+        User sendUser = new User();
         sendUser.setUsername(username);
         sendUser.setPassword(password);
-        UserInfo tUser = baseBiz.selectOne(sendUser);
-        if (tUser == null)
+        User user = baseBiz.selectOne(sendUser);
+
+        if (user == null)
             throw new UserInvalidException("user null");
 
         String token;
         try {
-            token = jwtTokenUtil.generateToken(tUser);
+            token = jwtTokenUtil.generateToken(new UserInfo(user.getId()+"",user.getUsername(),user.getName()));
         } catch (Exception e) {
             throw new UserInvalidException("token error");
         }

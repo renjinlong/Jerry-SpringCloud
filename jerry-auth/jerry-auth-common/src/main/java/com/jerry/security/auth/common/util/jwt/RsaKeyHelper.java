@@ -75,7 +75,7 @@ public class RsaKeyHelper {
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
         RsaKeyHelper rsaKeyHelper = new RsaKeyHelper();
         String path="/Users/renjinlong/Documents/workspace_upgrade/Jerry-SpringCloud/jerry-auth/jerry-auth-client/src/main/resources/client/";
-        rsaKeyHelper.generateKey(path+"pub.key", path+"pri.key", "1*&623!f");
+        rsaKeyHelper.generateKey(path+"pub.key", path+"pri.key", "1*&234!f");
     }
 
 }

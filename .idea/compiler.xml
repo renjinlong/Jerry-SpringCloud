@@ -22,7 +22,7 @@
     <bytecodeTargetLevel>
       <module name="admin" target="1.8" />
       <module name="jerry-admin" target="1.8" />
-      <module name="jerry-auth" target="1.8" />
+      <module name="jerry-auth" target="1.7" />
       <module name="jerry-auth-client" target="1.8" />
       <module name="jerry-auth-common" target="1.8" />
       <module name="jerry-auth-service" target="1.8" />

@@ -1,6 +1,6 @@
 package com.jerry.security.auth.biz;
 
-import com.jerry.security.auth.entity.UserInfo;
+import com.jerry.security.auth.entity.User;
 import com.jerry.security.auth.mapper.UserMapper;
 import com.jerry.security.common.biz.BaseBiz;
 import org.springframework.stereotype.Service;
@@ -14,5 +14,5 @@ import org.springframework.stereotype.Service;
  * @date 2017-12-07 17:35:04
  */
 @Service
-public class UserBiz extends BaseBiz<UserMapper,UserInfo> {
+public class UserBiz extends BaseBiz<UserMapper,User> {
 }

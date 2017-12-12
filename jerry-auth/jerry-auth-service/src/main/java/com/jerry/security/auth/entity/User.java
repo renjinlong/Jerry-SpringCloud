@@ -13,7 +13,7 @@ import javax.persistence.*;
  * @date 2017-12-07 17:35:04
  */
 @Table(name = "base_user")
-public class UserInfo implements Serializable, IJWTInfo {
+public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     //
@@ -132,6 +132,9 @@ public class UserInfo implements Serializable, IJWTInfo {
     @Column(name = "attr8")
     private String attr8;
 
+    public Integer getId() {
+        return id;
+    }
 
     /**
      * 设置：
@@ -530,16 +533,6 @@ public class UserInfo implements Serializable, IJWTInfo {
      */
     public String getAttr8() {
         return attr8;
-    }
-
-    @Override
-    public String getUniqueName() {
-        return this.username;
-    }
-
-    @Override
-    public String getId() {
-        return id + "";
     }
 
 }

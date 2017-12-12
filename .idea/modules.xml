@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Jerry-SpringCloud.iml" filepath="$PROJECT_DIR$/Jerry-SpringCloud.iml" />
-      <module fileurl="file://$PROJECT_DIR$/admin.iml" filepath="$PROJECT_DIR$/admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/jerry-admin/jerry-admin.iml" filepath="$PROJECT_DIR$/jerry-admin/jerry-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/jerry-auth/jerry-auth.iml" filepath="$PROJECT_DIR$/jerry-auth/jerry-auth.iml" />
       <module fileurl="file://$PROJECT_DIR$/jerry-auth/jerry-auth-client/jerry-auth-client.iml" filepath="$PROJECT_DIR$/jerry-auth/jerry-auth-client/jerry-auth-client.iml" />

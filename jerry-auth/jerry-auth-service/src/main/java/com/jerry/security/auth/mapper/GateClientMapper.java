@@ -12,7 +12,6 @@ import java.util.List;
  * 
  * 
  * @author jerry
- * @email chinarenlong@foxmail.com
  * @date 2017-12-07 14:20:41
  */
 public interface GateClientMapper extends Mapper<GateClient> {

@@ -41,10 +41,21 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 
+
 jwt:
   token-header: access-token
+  expire: 3600
   pri-key:
-      path: client/pri.key
+      path: jwt/pri.key
+  pub-key:
+    path: jwt/pub.key
+
+client:
+  id: user-center
+  secret: 123456
+  token-header: client-token
+  expire: 3600
+  pri-key:
+    path: client/pri.key
   pub-key:
     path: client/pub.key
-

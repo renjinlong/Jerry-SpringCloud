@@ -29,9 +29,9 @@ public class ClientRest {
     }
 
     @RequestMapping(value = "myClient")
-    public List<String> getAllowedClient(String clientId, String secret) {
-        List<String> allowedClient = clientService.getAllowedClient(clientId, secret);
-        return allowedClient;
+    public ObjectRestResponse getAllowedClient(String serviceId, String secret) {
+        List<String> allowedClient = clientService.getAllowedClient(serviceId, secret);
+        return new ObjectRestResponse<List<String>>().data(allowedClient);
     }
 
 }
